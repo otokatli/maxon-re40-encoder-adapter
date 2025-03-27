@@ -1,1 +1,1 @@
-# maxon-re40-encoder-adapter
+# Encoder Adapter for Maxon RE40
