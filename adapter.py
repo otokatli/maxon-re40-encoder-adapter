@@ -27,8 +27,31 @@ if __name__ == '__main__':
 
         with BuildSketch() as motor_ring_sk:
             Circle(radius=6.5*MM)
-        
+
         extrude(amount=12*MM, mode=Mode.SUBTRACT)
 
+        with BuildSketch() as mounting_hole_sk:
+            r = 30.4 / 2.0
+            x = r * math.cos(math.radians(45.0))
+            y = r * math.sin(math.radians(45.0))
+            with Locations((x, y)):
+                Circle(radius=2.5)
+
+            x = r * math.cos(math.radians(45.0 + 60.0))
+            y = r * math.sin(math.radians(45.0 + 60.0))
+            with Locations((x, y)):
+                Circle(radius=2.5)
+
+            x = r * math.cos(math.radians(45.0 + 180.0))
+            y = r * math.sin(math.radians(45.0 + 180.0))
+            with Locations((x, y)):
+                Circle(radius=2.5)
+
+            x = r * math.cos(math.radians(45.0 + 60.0 + 180.0))
+            y = r * math.sin(math.radians(45.0 + 60.0 + 180.0))
+            with Locations((x, y)):
+                Circle(radius=2.5)
+
+        extrude(amount=12*MM, mode=Mode.SUBTRACT)
 
     show(adapter)
