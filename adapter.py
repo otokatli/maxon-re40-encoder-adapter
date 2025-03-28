@@ -35,23 +35,66 @@ if __name__ == '__main__':
             x = r * math.cos(math.radians(45.0))
             y = r * math.sin(math.radians(45.0))
             with Locations((x, y)):
-                Circle(radius=2.5)
+                Circle(radius=1.25)
 
             x = r * math.cos(math.radians(45.0 + 60.0))
             y = r * math.sin(math.radians(45.0 + 60.0))
             with Locations((x, y)):
-                Circle(radius=2.5)
+                Circle(radius=1.25)
 
             x = r * math.cos(math.radians(45.0 + 180.0))
             y = r * math.sin(math.radians(45.0 + 180.0))
             with Locations((x, y)):
-                Circle(radius=2.5)
+                Circle(radius=1.25)
 
             x = r * math.cos(math.radians(45.0 + 60.0 + 180.0))
             y = r * math.sin(math.radians(45.0 + 60.0 + 180.0))
             with Locations((x, y)):
-                Circle(radius=2.5)
+                Circle(radius=1.25)
 
         extrude(amount=12*MM, mode=Mode.SUBTRACT)
+
+        with BuildSketch() as mounting_hole_sk:
+            r = 30.4 / 2.0
+            x = r * math.cos(math.radians(45.0))
+            y = r * math.sin(math.radians(45.0))
+            with Locations((x, y)):
+                Circle(radius=2)
+
+            x = r * math.cos(math.radians(45.0 + 60.0))
+            y = r * math.sin(math.radians(45.0 + 60.0))
+            with Locations((x, y)):
+                Circle(radius=2)
+
+            x = r * math.cos(math.radians(45.0 + 180.0))
+            y = r * math.sin(math.radians(45.0 + 180.0))
+            with Locations((x, y)):
+                Circle(radius=2)
+
+            x = r * math.cos(math.radians(45.0 + 60.0 + 180.0))
+            y = r * math.sin(math.radians(45.0 + 60.0 + 180.0))
+            with Locations((x, y)):
+                Circle(radius=2)
+
+        extrude(amount=6*MM, mode=Mode.SUBTRACT)
+
+        with BuildSketch() as encoder_mouting_sk:
+            r = 19.05 / 2
+
+            th = -45
+
+            x = r * math.cos(math.radians(th))
+            y = r * math.sin(math.radians(th))
+
+            with Locations((x, y)):
+                Circle(radius=2*MM)
+            
+            x = r * math.cos(math.radians(th + 180))
+            y = r * math.sin(math.radians(th + 180))
+
+            with Locations((x, y)):
+                Circle(radius=2*MM)
+        
+        extrude(amount=5*MM, mode=Mode.SUBTRACT)
 
     show(adapter)
