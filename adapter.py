@@ -97,4 +97,5 @@ if __name__ == '__main__':
         
         extrude(amount=5*MM, mode=Mode.SUBTRACT)
 
+    export_stl(adapter.part, 'adapter.stl')
     show(adapter)
