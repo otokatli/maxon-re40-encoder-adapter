@@ -87,15 +87,15 @@ if __name__ == '__main__':
             y = r * math.sin(math.radians(th))
 
             with Locations((x, y)):
-                Circle(radius=2*MM)
-            
+                Circle(radius=1.5*MM)
+
             x = r * math.cos(math.radians(th + 180))
             y = r * math.sin(math.radians(th + 180))
 
             with Locations((x, y)):
-                Circle(radius=2*MM)
-        
-        extrude(amount=5*MM, mode=Mode.SUBTRACT)
+                Circle(radius=1.5*MM)
+
+        extrude(amount=4*MM, mode=Mode.SUBTRACT)
 
     export_stl(adapter.part, 'adapter.stl')
     show(adapter)
