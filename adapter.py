@@ -26,7 +26,7 @@ if __name__ == '__main__':
         extrude(amount=12*MM, mode=Mode.SUBTRACT)
 
         with BuildSketch() as motor_ring_sk:
-            Circle(radius=6.5*MM)
+            Circle(radius=6.6*MM)
 
         extrude(amount=12*MM, mode=Mode.SUBTRACT)
 
