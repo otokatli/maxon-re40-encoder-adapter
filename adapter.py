@@ -76,7 +76,7 @@ if __name__ == '__main__':
             with Locations((x, y)):
                 Circle(radius=2)
 
-        extrude(amount=6*MM, mode=Mode.SUBTRACT)
+        extrude(amount=5*MM, mode=Mode.SUBTRACT)
 
         with BuildSketch() as encoder_mouting_sk:
             r = 19.05 / 2
